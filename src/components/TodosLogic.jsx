@@ -51,6 +51,19 @@ const TodosLogic = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const setUpdate = (updatedTitle, id) => {
+    // update state
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          // eslint-disable-next-line no-param-reassign
+          todo.title = updatedTitle;
+        }
+        return todo;
+      }),
+    );
+  };
+
   return (
     <div>
       <InputTodo addTodoItem={addTodoItem} />
@@ -59,6 +72,7 @@ const TodosLogic = () => {
         setTodos={setTodos}
         handleChange={handleChange}
         delTodo={delTodo}
+        setUpdate={setUpdate}
       />
     </div>
   );
