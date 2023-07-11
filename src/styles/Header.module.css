@@ -6,3 +6,7 @@
   text-transform: lowercase;
   text-align: center;
 }
+
+header p {
+  margin-top: 2.5rem;
+}
