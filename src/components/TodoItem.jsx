@@ -1,6 +1,8 @@
 /* eslint-disable prefer-const */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import { FaTrash } from 'react-icons/fa';
+import { AiFillEdit } from 'react-icons/ai';
 import styles from '../styles/TodoItem.module.css';
 
 const TodoItem = ({
@@ -42,10 +44,10 @@ const TodoItem = ({
           onChange={() => handleChange(itemProp.id)}
         />
         <button type="button" onClick={handleEditing}>
-          Edit
+          <AiFillEdit size="16px" color="#5e5e5e" />
         </button>
         <button type="button" onClick={() => delTodo(itemProp.id)}>
-          Delete
+          <FaTrash size="16px" color="#5e5e5e" />
         </button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}
